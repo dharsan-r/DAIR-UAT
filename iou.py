@@ -99,10 +99,10 @@ def calculate_iou_rgb(set1, set2, object_rgb_range):
 
 object_name = 'Car'
 rgb_table = read_rgb_table_from_csv('/home/saleh/QMIND/class_dict.csv')
-# rgb_values = rgb_table.get(object_name, None)
+rgb_values = rgb_table.get(object_name, None)
 
 # debugging purposes
-rgb_values = {'R': 35, 'G': 223, 'B': 11}
+# rgb_values = {'R': 35, 'G': 223, 'B': 11}
 
 print(f"RGB values for {object_name}: {rgb_values}")
 set1 = image_to_matrix('/home/saleh/QMIND/Images and masks/masked_image.png')
