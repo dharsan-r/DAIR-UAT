@@ -4,7 +4,7 @@ import csv
 
 
 def image_to_matrix(image_path):
-    print("insde image to matrix")
+    # print("insde image to matrix")
     image = Image.open(image_path)
     image = image.convert('RGB')
     width, height = image.size
@@ -20,7 +20,7 @@ def image_to_matrix(image_path):
 
 def filter_rgb_range(matrix, rgb_value):
   
-    print("matrix", matrix)
+    # print("matrix", matrix)
     rgb_range = {
         'R': (rgb_value['R'] - 10, rgb_value['R'] + 10),
         'G': (rgb_value['G'] - 10, rgb_value['G'] + 10),
@@ -29,10 +29,10 @@ def filter_rgb_range(matrix, rgb_value):
     mask = ((matrix[:, :, 2] >= rgb_range['R'][0]) & (matrix[:, :, 2] <= rgb_range['R'][1]) &
             (matrix[:, :, 3] >= rgb_range['G'][0]) & (matrix[:, :, 3] <= rgb_range['G'][1]) &
             (matrix[:, :, 4] >= rgb_range['B'][0]) & (matrix[:, :, 4] <= rgb_range['B'][1]))
-    print("mask",mask)
+    # print("mask",mask)
     filtered_matrix = matrix.clone()
     filtered_matrix[~mask] = 0
-    print("filtered", filtered_matrix)
+    # print("filtered", filtered_matrix)
     return filtered_matrix
 
 

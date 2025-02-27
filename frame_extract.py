@@ -47,3 +47,5 @@ def frame_extract(input_file):
     # Release all space and windows once done 
     cam.release() 
     cv2.destroyAllWindows() 
+
+frame_extract(test.mp4)
